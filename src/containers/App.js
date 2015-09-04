@@ -1,31 +1,21 @@
-import React, { Component, findDOMNode } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addItem } from '../actions/actions.js'
-import Content from '../components/Content.js'
+import List from '../components/List.js'
 
 class App extends Component {
   constructor (props) {
     super(props)
-
-    this.handleClick = this.handleClick.bind(this)
   }
 
   render () {
     return (
-      <div>
-        <input type='text' ref='item' />
-        <button onClick={ this.handleClick }>Add Item</button>
-        { this.props.listItems }
-      </div>
+      <List
+        addItem={ text => this.props.dispatch(addItem(text)) }
+        listItems={ this.props.listItems }
+      />
     )
   }
-
-  handleClick (e) {
-   const node = findDOMNode(this.refs.item)
-   const text = node.value.trim()
-   this.props.dispatch(addItem(text))
-   node.value = ''
- }
 }
 
 function select (state) {
