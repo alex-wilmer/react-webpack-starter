@@ -1,7 +1,15 @@
+// Dependencies
+
 import React from 'react'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+// Root Component
+
 import App from './containers/App.js'
+
+// Reducer
+
 import list from './reducers/list.js'
 
 let store = createStore(list)

@@ -3,7 +3,6 @@ import React, { Component, findDOMNode } from 'react'
 export default class List extends Component {
   constructor (props) {
     super(props)
-
     this.handleClick = this.handleClick.bind(this)
   }
 

@@ -1,1 +1,4 @@
-# react + webpack + react-hot-loader
+# react + redux + webpack + react-hot-loader
+
+    npm install
+    npm start
